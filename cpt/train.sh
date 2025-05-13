@@ -1,0 +1,24 @@
+torchrun --nproc_per_node=8 --master_port=15001 run_qa.py \
+    --model_name_or_path gpt2 \
+    --dataset_name squad \
+    --do_eval \
+    --per_device_train_batch_size 32 \
+    --per_device_eval_batch_size 32 \
+    --seed 42 \
+    --learning_rate 5e-04 \
+    --logging_strategy steps \
+    --logging_steps 20 \
+    --max_seq_length 786 \
+    --bf16 True \
+    --fp16 False \
+    --max_steps 1000 \
+    --output_dir ./results/ \
+    --overwrite_output_dir \
+    --eval_strategy steps \
+    --eval_steps 512 \
+    --save_strategy steps \
+    --save_steps 500 \
+    --lora_r 8 \
+    --lora_alpha 16 \
+    --bit_widths 4 8 \
+    --num_cyclic_period 32
