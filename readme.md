@@ -155,10 +155,23 @@ torchrun run_qa_eval.py \
 - PyTorch
 - Transformers (Hugging Face)
 - SQuAD dataset
-- CUDA-compatible GPU (for efficient training, 8 GPUs used in experiments)
 - bitsandbytes library
 
 ## Results and Insights
+
+### Performance Comparison
+
+| Model Configuration | EM Score | F1 Score |
+|---------------------|----------|----------|
+| Full Precision (FP32) | 64.05 | 75.10 |
+| FP16 | 64.03 | 75.16 |
+| 8-bit Static Quantization | 63.83 | 75.08 |
+| 4-bit Static Quantization | 42.76 | 56.47 |
+| BF16 + LoRA | 69.39 | 79.29 |
+| All 8-bit (switchable precision) | 67.53 | 77.69 |
+| All 4-bit (switchable precision) | 44.25 | 57.47 |
+| 4-bit (CPT) | 41.19 | 55.94 |
+| 8-bit (CPT) | 63.54 | 74.70 |
 
 The project demonstrates how different quantization strategies affect model performance, particularly:
 
