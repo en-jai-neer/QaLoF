@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="images/QaLoF Logo_ Dynamic Efficiency in LLMs.png" alt="QaLoF Logo" width="200"/>
+</p>
+
 # QaLoF: Efficient LLMs via Switchable and Dynamic Quantization
 
 ## Overview
